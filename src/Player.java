@@ -17,4 +17,7 @@ public class Player {
 	public void reduceHealth(int num){
 		health -= num;
 	}
+	public String toString(){
+		return "Player Health =" + this.getHealth();
+	}
 }

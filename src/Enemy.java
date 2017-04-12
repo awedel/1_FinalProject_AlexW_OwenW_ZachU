@@ -20,5 +20,8 @@ public class Enemy {
 			return true;
 		return false;
 	}
+	public String toString(){
+		return "Enemy Health =" + this.getHealth();
+	}
 
 }
