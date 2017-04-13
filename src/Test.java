@@ -7,15 +7,11 @@ public class Test {
 		System.out.println("Game Start");
 		Player guy = new Player();
 		Enemy badguy = new DefaultEnemy();
-		Item potion = new HealthPotion();
-		guy.addItem(potion);
 		while(guy.isDead() == false){
 			
 			System.out.println("\nYour Turn");
 			System.out.println("The Enemy has " + badguy.getHealth() + " health \nEnter 'attack' or 'a' to attack the Enemy");
 			String input = sc.nextLine();
-			guy.useItem(0);
-			System.out.println("Player used Item");
 			
 			if(input.equals("attack") || input.equals("a")){
 				badguy.reduceHealth(guy.getDamage());
@@ -36,8 +32,25 @@ public class Test {
 		System.out.println("\nYOU DIED");
 		System.out.println("\nYou killed " + guy.getKilled() + " enemies");
 	}
+	public static void itemTesting(){
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Test Start");
+		Player guy = new Player();
+		while(guy.getHealth() < 300){
+			guy.addItem(new HealthPotion());
+			int input = sc.nextInt();
+			if(input > -1){
+				 guy.useItem(input);
+			}
+			System.out.println("Health =" + guy.getHealth());
+			System.out.println(guy.printItems());
+		}
+		
+	}
 	public static void main(String[] args) {
-		mockGame();
+		//mockGame();
+		itemTesting();
 	}
 
 }
