@@ -4,7 +4,7 @@ public class Player {
 	private int health;
 	private int damage;
 	private int killed;
-	private ArrayList <Item> items;
+	private ArrayList <Item> inventory;
 	
 	public Player(){
 		health = 100;
@@ -29,16 +29,16 @@ public class Player {
 		return false;
 	}
 	public void addItem(Item item){
-		items.add(item);
+		inventory.add(item);
 	}
 	public void useItem(int slot){
-		items.remove(slot).effect(this);
+		inventory.remove(slot).effect(this);
 	}
-	public String printItems(){
-		return items.toString();
+	public String printInventory(){
+		return inventory.toString();
 	}
 	public String toString(){
-		return "Player Health =" + this.getHealth();
+		return "Player Health = " + this.getHealth();
 	}
 	public int getKilled(){
 		return killed;

@@ -7,5 +7,6 @@ public class HealthPotion extends Item{
 	public void effect(Player player){
 		player.increaseHealth(25);
 	}
+	
 
 }

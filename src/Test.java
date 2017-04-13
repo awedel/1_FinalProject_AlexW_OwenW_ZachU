@@ -27,7 +27,8 @@ public class Test {
 			
 			System.out.println("Enemy Turn");
 			guy.reduceHealth(badguy.getDamage());
-			System.out.println("The Enemy Attacks for " + badguy.getDamage() + "\nYou now have " + guy.getHealth() + " health");
+			System.out.println("The Enemy Attacks for " + badguy.getDamage());
+			System.out.println("\n" + guy);
 		}
 		System.out.println("\nYOU DIED");
 		System.out.println("\nYou killed " + guy.getKilled() + " enemies");
@@ -44,13 +45,13 @@ public class Test {
 				 guy.useItem(input);
 			}
 			System.out.println("Health =" + guy.getHealth());
-			System.out.println(guy.printItems());
+			System.out.println(guy.printInventory());
 		}
 		
 	}
 	public static void main(String[] args) {
-		//mockGame();
-		itemTesting();
+		mockGame();
+		//itemTesting();
 	}
 
 }
