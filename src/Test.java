@@ -18,6 +18,12 @@ public class Test {
 			guy.reduceHealth(badguy.getDamage());
 			System.out.println("The Enemy Attacks for " + badguy.getDamage() + "\nYou now have " + guy.getHealth() + " health");
 		}
+		if(guy.isDead() == true){
+			System.out.println("\nYOU DIED");
+		}
+		else{
+			System.out.println("\nYOU WIN");
+		}
 	}
 	public static void main(String[] args) {
 		mockGame();
