@@ -7,7 +7,9 @@ public abstract class Item {
 	public String getName(){
 		return itemName;
 	}
-	
+	public String toString(){
+		return this.getName();
+	}
 	public abstract void effect(Player player);
 	
 

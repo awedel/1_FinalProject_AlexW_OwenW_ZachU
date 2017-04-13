@@ -17,16 +17,22 @@ public class Player {
 	public int getDamage(){
 		return damage;
 	}
-	public void reduceHealth(int num){
-		health -= num;
+	public void reduceHealth(int reduction){
+		health -= reduction;
+	}
+	public void increaseHealth(int increase){
+		health += increase;
 	}
 	public boolean isDead(){
 		if(health < 1)
 			return true;
 		return false;
 	}
+	public void addItem(Item item){
+		items.add(item);
+	}
 	public void useItem(int slot){
-		items.get(slot).effect(this);
+		items.remove(slot).effect(this);
 	}
 	public String toString(){
 		return "Player Health =" + this.getHealth();
