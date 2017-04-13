@@ -17,6 +17,11 @@ public class Player {
 	public void reduceHealth(int num){
 		health -= num;
 	}
+	public boolean isDead(){
+		if(health < 1)
+			return true;
+		return false;
+	}
 	public String toString(){
 		return "Player Health =" + this.getHealth();
 	}

@@ -16,7 +16,7 @@ public class Enemy {
 		return damage;
 	}
 	public boolean isDead(){
-		if(health < 0)
+		if(health < 1)
 			return true;
 		return false;
 	}
