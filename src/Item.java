@@ -10,6 +10,9 @@ public abstract class Item {
 	public String toString(){
 		return this.getName();
 	}
+	
+	public abstract void addToInventory(Player player);
+	
 	public abstract void effect(Player player);
 	
 

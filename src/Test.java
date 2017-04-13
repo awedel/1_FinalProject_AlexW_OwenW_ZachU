@@ -39,7 +39,9 @@ public class Test {
 		System.out.println("Test Start");
 		Player guy = new Player();
 		while(guy.getHealth() < 300){
-			guy.addItem(new HealthPotion());
+			Item potion = new HealthPotion();
+			System.out.println(potion);
+			potion.addToInventory(guy);
 			int input = sc.nextInt();
 			if(input > -1){
 				 guy.useItem(input);
@@ -50,8 +52,8 @@ public class Test {
 		
 	}
 	public static void main(String[] args) {
-		mockGame();
-		//itemTesting();
+		//mockGame();
+		itemTesting();
 	}
 
 }

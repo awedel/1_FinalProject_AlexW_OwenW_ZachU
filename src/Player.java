@@ -10,6 +10,7 @@ public class Player {
 		health = 100;
 		damage = 20;
 		killed = 0;
+		inventory = new ArrayList <Item>();
 	}
 	public int getHealth(){
 		return health;
@@ -28,8 +29,8 @@ public class Player {
 			return true;
 		return false;
 	}
-	public void addItem(Item item){
-		inventory.add(item);
+	public ArrayList <Item> getInventory(){
+		return inventory;
 	}
 	public void useItem(int slot){
 		inventory.remove(slot).effect(this);
