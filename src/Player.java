@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 
 public class Player {
 	private int health;
 	private int damage;
 	private int killed;
-	//private ArrayList <Item> items;
+	private ArrayList <Item> items;
 	
 	public Player(){
 		health = 100;
@@ -23,6 +24,9 @@ public class Player {
 		if(health < 1)
 			return true;
 		return false;
+	}
+	public void useItem(int slot){
+		items.get(slot).effect(this);
 	}
 	public String toString(){
 		return "Player Health =" + this.getHealth();

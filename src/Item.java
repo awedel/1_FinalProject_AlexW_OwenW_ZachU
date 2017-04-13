@@ -8,7 +8,7 @@ public abstract class Item {
 		return itemName;
 	}
 	
-	public abstract void effect();
+	public abstract void effect(Player player);
 	
 
 }
