@@ -1,7 +1,8 @@
 
 public class Enemy {
 	private int health;
-	private  int damage;
+	private int damage;
+	private boolean isBoss;
 	public Enemy(int h, int d){
 		health = h;
 		damage = d;
@@ -20,5 +21,7 @@ public class Enemy {
 			return true;
 		return false;
 	}
-
+	public boolean isBoss(){
+		return isBoss;
+	}
 }
