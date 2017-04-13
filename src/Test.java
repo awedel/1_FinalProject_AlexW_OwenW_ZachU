@@ -7,6 +7,8 @@ public class Test {
 		System.out.println("Game Start");
 		Player guy = new Player();
 		Enemy badguy = new DefaultEnemy();
+		Item bomb = new Bomb();
+		bomb.addToInventory(guy);
 		while(guy.isDead() == false){
 			
 			System.out.println("\nYour Turn");
@@ -16,6 +18,12 @@ public class Test {
 			if(input.equals("attack") || input.equals("a")){
 				badguy.reduceHealth(guy.getDamage());
 				System.out.println("You did " + guy.getDamage() + " to the enemy");
+			}
+			else if(input.equals("bomb") || input.equals("b")){
+				if(guy.getInventory().size() < 1)
+					break;
+				else
+					guy.useItem(0);
 			}
 			
 			if(badguy.isDead() == true){
@@ -52,7 +60,7 @@ public class Test {
 		
 	}
 	public static void main(String[] args) {
-		//mockGame();
+		mockGame();
 		//itemTesting();
 	}
 	//trying to push all through
