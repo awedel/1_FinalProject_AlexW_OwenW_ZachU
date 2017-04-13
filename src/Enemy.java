@@ -1,5 +1,5 @@
 
-public class Enemy {
+public abstract class Enemy {
 	private int health;
 	private  int damage;
 	public Enemy(int h, int d){

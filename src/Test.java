@@ -5,7 +5,7 @@ public class Test {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Game Start");
 		Player guy = new Player();
-		Enemy badguy = new Enemy(100, 10);
+		Enemy badguy = new DefaultEnemy(100, 10);
 		while(guy.isDead() == false && badguy.isDead() == false){
 			System.out.println("Your Turn");
 			System.out.println("The Enemy has " + badguy.getHealth() + " health \nEnter 'attack' or 'a' to attack the Enemy");
