@@ -2,11 +2,13 @@
 public class Player {
 	private int health;
 	private int damage;
+	private int killed;
 	//private ArrayList <Item> items;
 	
 	public Player(){
 		health = 100;
 		damage = 20;
+		killed = 0;
 	}
 	public int getHealth(){
 		return health;
@@ -24,5 +26,11 @@ public class Player {
 	}
 	public String toString(){
 		return "Player Health =" + this.getHealth();
+	}
+	public int getKilled(){
+		return killed;
+	}
+	public void addKilled(){
+		killed++;
 	}
 }
