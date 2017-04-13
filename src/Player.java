@@ -34,6 +34,9 @@ public class Player {
 	public void useItem(int slot){
 		items.remove(slot).effect(this);
 	}
+	public String printItems(){
+		return items.toString();
+	}
 	public String toString(){
 		return "Player Health =" + this.getHealth();
 	}

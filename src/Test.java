@@ -9,17 +9,13 @@ public class Test {
 		Enemy badguy = new DefaultEnemy();
 		Item potion = new HealthPotion();
 		guy.addItem(potion);
-		
 		while(guy.isDead() == false){
 			
 			System.out.println("\nYour Turn");
 			System.out.println("The Enemy has " + badguy.getHealth() + " health \nEnter 'attack' or 'a' to attack the Enemy");
 			String input = sc.nextLine();
-			
-			if(input.equals("heal") || input.equals("h")){
-				guy.useItem(0);
-				System.out.println("Player used Item");
-			}
+			guy.useItem(0);
+			System.out.println("Player used Item");
 			
 			if(input.equals("attack") || input.equals("a")){
 				badguy.reduceHealth(guy.getDamage());
