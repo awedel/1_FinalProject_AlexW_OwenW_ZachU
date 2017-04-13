@@ -1,5 +1,5 @@
 
-public class Enemy {
+public abstract class Enemy {
 	private int health;
 	private int damage;
 	private boolean isBoss;
@@ -17,11 +17,16 @@ public class Enemy {
 		return damage;
 	}
 	public boolean isDead(){
-		if(health < 0)
+		if(health < 1)
 			return true;
 		return false;
 	}
+
 	public boolean isBoss(){
 		return isBoss;
+	}
+
+	public String toString(){
+		return "Enemy Health =" + this.getHealth();
 	}
 }
