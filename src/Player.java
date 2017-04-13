@@ -35,6 +35,7 @@ public class Player {
 	public void useItem(int slot){
 		inventory.remove(slot).effect(this);
 	}
+	
 	public String printInventory(){
 		return inventory.toString();
 	}

@@ -7,8 +7,10 @@ public class HealthPotion extends Item{
 	public void effect(Player player){
 		player.increaseHealth(25);
 	}
-	public void addToInventory(Player player){
-		player.getInventory().add(this);
+	
+	public void effect(Enemy enemy) {
+		// TODO Auto-generated method stub
+		//does nothing, has no effect on enemy
 	}
 
 }

@@ -3,9 +3,10 @@ public abstract class Enemy {
 	private int health;
 	private int damage;
 	private boolean isBoss;
-	public Enemy(int h, int d){
+	public Enemy(int h, int d, boolean b){
 		health = h;
 		damage = d;
+		isBoss = b;
 	}
 	public int getHealth(){
 		return health;

@@ -46,7 +46,7 @@ public class Test {
 			if(input > -1){
 				 guy.useItem(input);
 			}
-			System.out.println("Health =" + guy.getHealth());
+			System.out.println(guy);
 			System.out.println(guy.printInventory());
 		}
 		
