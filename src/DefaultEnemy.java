@@ -1,8 +1,8 @@
 
 public class DefaultEnemy extends Enemy{
 
-	public DefaultEnemy(int h, int d) {
-		super(h, d);
+	public DefaultEnemy() {
+		super(100,10);
 		// TODO Auto-generated constructor stub
 	}
 	
