@@ -12,5 +12,5 @@ public abstract class Item {
 	}
 	public abstract void effect(Player player);
 	
-
+xD
 }
