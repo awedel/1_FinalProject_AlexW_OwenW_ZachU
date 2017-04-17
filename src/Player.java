@@ -49,11 +49,18 @@ public class Player {
 		killed++;
 	}
 	public boolean parry(Enemy enemy){
-		int random = (int) Math.random() * 100 + 1;
-		if(random < 25){
+		if(((int) (Math.random() * 100 + 1)) < 25){
 			enemy.changeCanAttack();
 			return true;
 		}
 		return false;
+	}
+	public void getItem(){
+		if(((int) Math.random() * 25 + 1) < 15){
+			Item potion = new HealthPotion();
+			potion.addToInventory(this);
+			//for printing
+			System.out.println("\n" + this.printInventory());
+		}
 	}
 }

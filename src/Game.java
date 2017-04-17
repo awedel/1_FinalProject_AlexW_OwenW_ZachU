@@ -41,14 +41,7 @@ public class Game {
 			if(enemy.isDead() == true){
 				System.out.println("\nEnemy Killed");
 				player.addKilled();
-				
-				int chance = (int) Math.random() * 10;
-				if(chance == 0){
-					Item potion = new HealthPotion();
-					potion.addToInventory(player);
-					System.out.println("\nYou got a potion");
-				}
-				
+				player.getItem();
 				System.out.println("\nA new enemy appears");
 				enemy = new DefaultEnemy();
 			}
