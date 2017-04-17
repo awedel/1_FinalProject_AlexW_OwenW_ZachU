@@ -13,7 +13,5 @@ public abstract class Item {
 	public void addToInventory(Player player){
 		player.getInventory().add(this);
 	}
-	public abstract void effect(Player player);
-	public abstract void effect(Enemy enemy);
-
+	public abstract void effect(Fighter fighter);
 }

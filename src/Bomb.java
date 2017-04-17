@@ -3,16 +3,11 @@ public class Bomb extends Item{
 
 	public Bomb() {
 		super("Bomb");
+	}
+	public void effect(Fighter fighter) {
+		if(fighter instanceof Enemy){
+			fighter.reduceHealth(50);
+		}
 		
 	}
-
-	public void effect(Player player) {
-		//does nothing, has no effect on player
-	}
-
-	public void effect(Enemy enemy) {
-		enemy.reduceHealth(100);
-		
-	}
-
 }
