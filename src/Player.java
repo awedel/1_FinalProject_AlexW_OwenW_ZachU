@@ -48,5 +48,11 @@ public class Player extends Fighter {
 			//for printing
 			System.out.println("\n" + this.printInventory());
 		}
+		else if(((int) Math.random() * 100 + 1) < 5){
+			Item bomb = new Bomb();
+			bomb.addToInventory(this);
+			//for printing testing
+			System.out.println("\n" + this.printInventory());
+		}
 	}
 }
