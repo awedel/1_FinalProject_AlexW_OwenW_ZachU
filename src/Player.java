@@ -56,7 +56,7 @@ public class Player {
 		return false;
 	}
 	public void getItem(){
-		if(((int) Math.random() * 25 + 1) < 15){
+		if(((int) Math.random() * 100 + 1) < 15){
 			Item potion = new HealthPotion();
 			potion.addToInventory(this);
 			//for printing

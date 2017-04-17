@@ -59,6 +59,8 @@ public class Game {
 		System.out.println("\nYOU DIED");
 		System.out.println("\nYou killed " + player.getKilled() + " enemies");
 	}
+	
+	//main
 
 	public static void main(String[] args) {
 		Game game = new Game();
