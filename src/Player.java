@@ -9,13 +9,19 @@ public class Player extends Fighter {
 		killed = 0;
 		inventory = new ArrayList <Item>();
 	}
-	public ArrayList <Item> getInventory(){
+	public Item useInventory(int slot){
+		return inventory.remove(slot);
+	}
+	public ArrayList<Item> getInventory(){
 		return inventory;
 	}
-	public void useItem(int slot){
-		inventory.remove(slot).effect(this);
+	public Item getInventory(int slot){
+		return inventory.get(slot);
 	}
-	
+	public boolean isInventoryEmpty(){
+		//true if empty
+		return inventory.size() < 1;
+	}
 	public String printInventory(){
 		return inventory.toString();
 	}

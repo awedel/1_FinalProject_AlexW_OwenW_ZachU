@@ -22,10 +22,18 @@ public class Game {
 				System.out.println("You did " + player.getDamage() + " to the enemy");
 			}
 			else if(input.equals("item") || input.equals("i")){
-				if(player.getInventory().size() < 1)
+				System.out.println("Enter item slot you want to use");
+				int slot = sc.nextInt();
+				if(player.isInventoryEmpty()){
+					System.out.println("Your Inventory is empty");
 					break;
-				else
-					player.useItem(0);
+				}
+				else{
+					if(player.getInventory(slot) instanceof HealthPotion)
+						player.useItem(player.useInventory(slot));
+					else
+						enemy.useItem(player.useInventory(slot));
+				}
 			}
 			else if(input.equals("parry") || input.equals("p")){
 				if(player.parry(enemy)){

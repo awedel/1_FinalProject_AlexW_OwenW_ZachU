@@ -24,4 +24,7 @@ public class Fighter {
 	public void increaseHealth(int increase){
 		health += increase;
 	}
+	public void useItem(Item item){
+		item.effect(this);
+	}
 }
