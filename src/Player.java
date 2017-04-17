@@ -48,4 +48,12 @@ public class Player {
 	public void addKilled(){
 		killed++;
 	}
+	public boolean parry(Enemy enemy){
+		int random = (int) Math.random() * 100 + 1;
+		if(random < 25){
+			enemy.changeCanAttack();
+			return true;
+		}
+		return false;
+	}
 }

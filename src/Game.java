@@ -27,6 +27,16 @@ public class Game {
 				else
 					player.useItem(0);
 			}
+			else if(input.equals("parry") || input.equals("p")){
+				if(player.parry(enemy)){
+					System.out.println("You successfully parried");
+					enemy.reduceHealth(player.getDamage() * 2);
+					System.out.println("You did " + player.getDamage() * 2 + " to the enemy");
+				}
+				else{
+					System.out.println("Your parry failed!");
+				}
+			}
 			
 			if(enemy.isDead() == true){
 				System.out.println("\nEnemy Killed");
@@ -44,8 +54,13 @@ public class Game {
 			}
 			
 			System.out.println("Enemy Turn");
-			player.reduceHealth(enemy.getDamage());
-			System.out.println("The Enemy Attacks for " + enemy.getDamage());
+			if(enemy.getCanAttack()){
+				player.reduceHealth(enemy.getDamage());
+				System.out.println("The Enemy Attacks for " + enemy.getDamage());
+			}
+			else{
+				enemy.changeCanAttack();
+			}
 			System.out.println("\n" + player);
 		}
 		System.out.println("\nYOU DIED");

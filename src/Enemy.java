@@ -3,10 +3,12 @@ public abstract class Enemy {
 	private int health;
 	private int damage;
 	private boolean isBoss;
+	private boolean canAttack;
 	public Enemy(int h, int d, boolean b){
 		health = h;
 		damage = d;
 		isBoss = b;
+		canAttack = true;
 	}
 	public int getHealth(){
 		return health;
@@ -29,5 +31,12 @@ public abstract class Enemy {
 
 	public String toString(){
 		return "Enemy Health =" + this.getHealth();
+	}
+	
+	public void changeCanAttack(){
+		canAttack = !canAttack;
+	}
+	public boolean getCanAttack(){
+		return canAttack;
 	}
 }
