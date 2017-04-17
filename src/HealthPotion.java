@@ -9,7 +9,6 @@ public class HealthPotion extends Item{
 	}
 	
 	public void effect(Enemy enemy) {
-		// TODO Auto-generated method stub
 		//does nothing, has no effect on enemy
 	}
 
