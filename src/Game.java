@@ -19,7 +19,7 @@ public class Game {
 			
 			if(input.equals("attack") || input.equals("a")){
 				enemy.reduceHealth(player.getDamage());
-				System.out.println("You did " + enemy.getDamage() + " to the enemy");
+				System.out.println("You did " + player.getDamage() + " to the enemy");
 			}
 			else if(input.equals("item") || input.equals("i")){
 				if(player.getInventory().size() < 1)
@@ -31,6 +31,14 @@ public class Game {
 			if(enemy.isDead() == true){
 				System.out.println("\nEnemy Killed");
 				player.addKilled();
+				
+				int chance = (int) Math.random() * 10;
+				if(chance == 0){
+					Item potion = new HealthPotion();
+					potion.addToInventory(player);
+					System.out.println("\nYou got a potion");
+				}
+				
 				System.out.println("\nA new enemy appears");
 				enemy = new DefaultEnemy();
 			}
@@ -45,7 +53,8 @@ public class Game {
 	}
 
 	public static void main(String[] args) {
-		
+		Game game = new Game();
+		game.playGame();
 
 	}
 
