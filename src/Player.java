@@ -11,6 +11,7 @@ public class Player extends Fighter {
 		killed = 0;
 		inventory = new ArrayList <Item>();
 	}
+	
 	public Item useInventory(int slot){
 		return inventory.remove(slot);
 	}
