@@ -24,9 +24,6 @@ public class Player extends Fighter {
 		//true if empty
 		return inventory.size() < 1;
 	}
-	public String printInventory(){
-		return inventory.toString();
-	}
 	public String toString(){
 		return "Player Health = " + this.getHealth() + "\nWeapon = " + weapon + "\n" + inventory;
 	}
@@ -47,20 +44,18 @@ public class Player extends Fighter {
 		if(((int) Math.random() * 100 + 1) < 25){
 			Item potion = new HealthPotion();
 			potion.addToInventory(this);
-			//for printing
-			System.out.println("\n" + this.printInventory());
 		}
 		else if(((int) Math.random() * 100 + 1) < 15){
 			Item bomb = new Bomb();
 			bomb.addToInventory(this);
-			//for printing testing
-			System.out.println("\n" + this.printInventory());
 		}
 		else if(((int) Math.random() * 100 + 1) < 5){
 			Item pack = new FullHealthPack();
 			pack.addToInventory(this);
-			//for printing testing
-			System.out.println("\n" + this.printInventory());
+		}
+		else if(((int) Math.random() * 100 + 1) == 1){
+			Item boom = new SuperBomb();
+			boom.addToInventory(this);
 		}
 	}
 	public void setWeapon(Weapon w){
