@@ -54,10 +54,6 @@ public class Player extends Fighter {
 			Item pack = new FullHealthPack();
 			pack.addToInventory(this);
 		}
-		else if(((int) Math.random() * 100 + 1) == 1){
-			Item boom = new SuperBomb();
-			boom.addToInventory(this);
-		}
 	}
 	public void setWeapon(Weapon w){
 		weapon = w;
