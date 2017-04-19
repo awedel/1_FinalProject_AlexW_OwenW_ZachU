@@ -2,10 +2,11 @@
 public class Fighter {
 	private int health;
 	private int damage;
-	
+	private boolean canAttack;
 	public Fighter(int h, int d){
 		health = h;
 		damage = d;
+		canAttack = true;
 	}
 	public boolean isDead(){
 		if(this.getHealth() < 1)
@@ -26,5 +27,11 @@ public class Fighter {
 	}
 	public void useItem(Item item){
 		item.effect(this);
+	}
+	public void changeCanAttack(){
+		canAttack = !canAttack;
+	}
+	public boolean getCanAttack(){
+		return canAttack;
 	}
 }
