@@ -1,6 +1,6 @@
 
 public class DragonOfTheDeep extends Enemy{
-	public DragonOfTheDeep(int h, int d, boolean b){
+	public DragonOfTheDeep(){
 		super(300,25,true);
 	}
 

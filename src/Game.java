@@ -6,7 +6,7 @@ public class Game {
 	
 	public Game(){
 		player = new Player();
-		enemy = new DefaultEnemy();
+		enemy = new SnakeDwarf();
 	}
 	public void playGame(){
 		@SuppressWarnings("resource")

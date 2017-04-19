@@ -6,7 +6,7 @@ public class Player extends Fighter {
 	private Weapon weapon;
 	
 	public Player(){
-		super(100,20);
+		super(150,20);
 		weapon = new ShortSword();
 		killed = 0;
 		inventory = new ArrayList <Item>();
@@ -57,6 +57,9 @@ public class Player extends Fighter {
 	}
 	public void setWeapon(Weapon w){
 		weapon = w;
+	}
+	public Weapon getWeapon(){
+		return weapon;
 	}
 	public int getDamage(){
 		return weapon.getWeaponDamage();
