@@ -13,5 +13,8 @@ public abstract class Weapon {
 	public int getWeaponDamage(){
 		return damage;
 	}
+	public String toString(){
+		return this.getWeaponName();
+	}
 	
 }

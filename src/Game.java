@@ -14,7 +14,7 @@ public class Game {
 		System.out.println("Game Start");
 		while(player.isDead() == false){
 			System.out.println("\nYour Turn");
-			System.out.println("The Enemy has " + enemy.getHealth() + " health \nEnter 'attack' or 'a' to attack the Enemy");
+			System.out.println("The Enemy has " + enemy.getHealth() + " health \nEnter 'a' to attack, 'i' to use Item, and 'p' to parry");
 			String input = sc.nextLine();
 			
 			if(input.equals("attack") || input.equals("a")){
@@ -56,6 +56,7 @@ public class Game {
 				System.out.println("\nEnemy Killed");
 				player.addKilled();
 				player.getItem();
+				player.getNewWeapon();
 				System.out.println("\nA new enemy appears");
 				enemy = new DefaultEnemy();
 			}

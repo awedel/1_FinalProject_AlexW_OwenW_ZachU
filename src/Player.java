@@ -6,7 +6,7 @@ public class Player extends Fighter {
 	private Weapon weapon;
 	
 	public Player(){
-		super(100,20);
+		super(500,20);
 		weapon = new ShortSword();
 		killed = 0;
 		inventory = new ArrayList <Item>();
@@ -28,7 +28,7 @@ public class Player extends Fighter {
 		return inventory.toString();
 	}
 	public String toString(){
-		return "Player Health = " + this.getHealth();
+		return "Player Health = " + this.getHealth() + "\nWeapon = " + weapon + "\n" + inventory;
 	}
 	public int getKilled(){
 		return killed;
@@ -62,5 +62,12 @@ public class Player extends Fighter {
 	}
 	public int getDamage(){
 		return weapon.getWeaponDamage();
+	}
+	public void getNewWeapon(){
+		int random = ((int) Math.random() * 100);
+		if(random < 25)
+			weapon = new Mace();
+		else if(random < 50)
+			weapon = new Axe();
 	}
 }
