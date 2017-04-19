@@ -18,8 +18,14 @@ public class Game {
 			String input = sc.nextLine();
 			
 			if(input.equals("attack") || input.equals("a")){
-				enemy.reduceHealth(player.getDamage());
-				System.out.println("You did " + player.getDamage() + " to the enemy");
+				if(player.getCanAttack()){
+					enemy.reduceHealth(player.getDamage());
+					System.out.println("You did " + player.getDamage() + " to the enemy");
+				}
+				else{
+					System.out.println("You cannot attack");
+					player.changeCanAttack();
+				}
 			}
 			else if(input.equals("item") || input.equals("i")){
 				System.out.println("Enter item slot you want to use");
