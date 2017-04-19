@@ -44,15 +44,21 @@ public class Player extends Fighter {
 		return false;
 	}
 	public void getItem(){
-		if(((int) Math.random() * 100 + 1) < 15){
+		if(((int) Math.random() * 100 + 1) < 25){
 			Item potion = new HealthPotion();
 			potion.addToInventory(this);
 			//for printing
 			System.out.println("\n" + this.printInventory());
 		}
-		else if(((int) Math.random() * 100 + 1) < 5){
+		else if(((int) Math.random() * 100 + 1) < 15){
 			Item bomb = new Bomb();
 			bomb.addToInventory(this);
+			//for printing testing
+			System.out.println("\n" + this.printInventory());
+		}
+		else if(((int) Math.random() * 100 + 1) < 5){
+			Item pack = new FullHealthPack();
+			pack.addToInventory(this);
 			//for printing testing
 			System.out.println("\n" + this.printInventory());
 		}
