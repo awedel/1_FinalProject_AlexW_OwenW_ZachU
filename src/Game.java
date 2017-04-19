@@ -19,7 +19,7 @@ public class Game {
 			
 			if(input.equals("attack") || input.equals("a")){
 				if(player.getCanAttack()){
-					enemy.reduceHealth(player.getDamage());
+					player.attack(enemy, 1);
 					System.out.println("You did " + player.getDamage() + " to the enemy");
 				}
 				else{
@@ -44,7 +44,7 @@ public class Game {
 			else if(input.equals("parry") || input.equals("p")){
 				if(player.parry(enemy)){
 					System.out.println("You successfully parried");
-					enemy.reduceHealth(player.getDamage() * 2);
+					player.attack(enemy, 2);
 					System.out.println("You did " + player.getDamage() * 2 + " to the enemy");
 				}
 				else{
@@ -63,7 +63,7 @@ public class Game {
 			
 			System.out.println("Enemy Turn");
 			if(enemy.getCanAttack()){
-				player.reduceHealth(enemy.getDamage());
+				enemy.attack(player,1);
 				System.out.println("The Enemy Attacks for " + enemy.getDamage());
 			}
 			else{

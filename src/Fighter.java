@@ -34,4 +34,7 @@ public class Fighter {
 	public boolean getCanAttack(){
 		return canAttack;
 	}
+	public void attack(Fighter fighter, int multiplier){
+		fighter.reduceHealth(this.getDamage() * multiplier);
+	}
 }
