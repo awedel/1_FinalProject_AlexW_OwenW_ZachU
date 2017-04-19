@@ -7,10 +7,10 @@ public abstract class Weapon {
 		name = n;
 		damage = d;
 	}
-	public String getName(){
+	public String getWeaponName(){
 		return name;
 	}
-	public int getDamage(){
+	public int getWeaponDamage(){
 		return damage;
 	}
 	
