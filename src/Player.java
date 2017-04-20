@@ -5,6 +5,7 @@ public class Player extends Fighter {
 	private ArrayList <Item> inventory;
 	private Weapon weapon;
 	private boolean firstwave;
+	private int level;
 	
 	public Player(){
 		super(150,20);
@@ -12,8 +13,8 @@ public class Player extends Fighter {
 		killed = 0;
 		firstwave = true;
 		inventory = new ArrayList <Item>();
+		level = 0;
 	}
-	
 	public Item useInventory(int slot){
 		return inventory.remove(slot);
 	}
@@ -28,7 +29,7 @@ public class Player extends Fighter {
 		return inventory.size() < 1;
 	}
 	public String toString(){
-		return "Player Health = " + this.getHealth() + "\nWeapon = " + weapon + "\n" + inventory;
+		return "Player Health = " + this.getHealth() + "\nWeapon = " + weapon + "\n" + inventory + "\nLevel = " + level;
 	}
 	public int getKilled(){
 		return killed;
@@ -64,7 +65,7 @@ public class Player extends Fighter {
 		return weapon;
 	}
 	public int getDamage(){
-		return weapon.getWeaponDamage();
+		return weapon.getWeaponDamage() + (5 * level);
 	}
 	public void getNewWeapon(){
 		int random = ((int)(Math.random() * 100));
@@ -84,25 +85,32 @@ public class Player extends Fighter {
 		if(this.getKilled() > 3)
 			firstwave = false;
 		else if(firstwave){
-			if(this.getKilled() % 3 == 0)
-				return new DragonOfTheDeep();
-			else if(this.getKilled() % 2 == 0)
-				return new SkeletonEffigy();
-			else{
-				return new MushroomMan();
+			if(this.getKilled() % 3 == 0){
+				level ++;
+				return new DragonOfTheDeep(0);
 			}
+			else if(this.getKilled() % 2 == 0){
+				level ++;
+				return new SkeletonEffigy(0);
+			}
+			else
+				return new MushroomMan(0);
 		}
 		else{
+			level ++;
 			int random =((int)(Math.random() * 4));
 			if(random < 1)
-				return new DragonOfTheDeep();
+				return new DragonOfTheDeep(level * 10);
 			else if(random < 2)
-				return new MushroomMan();
+				return new MushroomMan(level * 10);
 			else if(random < 3)
-				return new SnakeDwarf();
+				return new SnakeDwarf(level * 10);
 			else
-				return new SkeletonEffigy();
+				return new SkeletonEffigy(level * 10);
 		}
-		return new SnakeDwarf();
+		return new SnakeDwarf(level * 10);
+	}
+	public void levelHealth(){
+		this.setHealth(level * 5);;
 	}
 }

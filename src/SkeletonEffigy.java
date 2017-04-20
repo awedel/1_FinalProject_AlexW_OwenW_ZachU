@@ -1,7 +1,7 @@
 
 public class SkeletonEffigy extends Enemy{
-	public SkeletonEffigy(){
-		super(50,30,false,"Skeleton Effigy");
+	public SkeletonEffigy(int strong){
+		super(50 + strong,30,false,"Skeleton Effigy");
 	}
 
 }

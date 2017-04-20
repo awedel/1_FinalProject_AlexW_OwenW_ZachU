@@ -1,7 +1,7 @@
 
 public class DragonOfTheDeep extends Enemy{
-	public DragonOfTheDeep(){
-		super(300,25,true,"Dragon of the Deep");
+	public DragonOfTheDeep(int strong){
+		super(300 + strong,25,true,"Dragon of the Deep");
 	}
 
 }

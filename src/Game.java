@@ -1,3 +1,4 @@
+//for testing in console
 import java.util.Scanner;
 
 public class Game {
@@ -6,7 +7,7 @@ public class Game {
 	
 	public Game(){
 		player = new Player();
-		enemy = new SnakeDwarf();
+		enemy = new SnakeDwarf(0);
 	}
 	public void playGame(){
 		@SuppressWarnings("resource")
@@ -22,6 +23,15 @@ public class Game {
 		sc.nextLine();
 		
 		while(player.isDead() == false){
+			if(enemy.isDead() == true){
+				System.out.println("\n" + enemy.getName() + " Killed");
+				player.levelHealth();
+				player.addKilled();
+				player.getItem();
+				player.getNewWeapon();
+				enemy = player.getNewEnemy();
+				System.out.println("\nA new enemy appears\n" + enemy);
+			}
 			System.out.println("\n" + player + "\nYour Turn");
 			System.out.println(enemy + "\nEnter 'a' to attack, 'i' to use Item, and 'p' to parry");
 			String input = sc.nextLine();
@@ -61,16 +71,6 @@ public class Game {
 					System.out.println("Your parry failed!");
 				}
 			}
-			
-			if(enemy.isDead() == true){
-				System.out.println("\n" + enemy.getName() + " Killed");
-				player.addKilled();
-				player.getItem();
-				player.getNewWeapon();
-				enemy = player.getNewEnemy();
-				System.out.println("\nA new enemy appears\n" + enemy);
-			}
-			
 			System.out.println("Enemy Turn");
 			if(enemy.getCanAttack()){
 				enemy.attack(player,1);

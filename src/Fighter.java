@@ -16,6 +16,9 @@ public class Fighter {
 	public int getHealth(){
 		return health;
 	}
+	public void setHealth(int add){
+		health += add;
+	}
 	public int getDamage(){
 		return damage;
 	}
@@ -35,6 +38,8 @@ public class Fighter {
 		return canAttack;
 	}
 	public void attack(Fighter fighter, int multiplier){
+		if(this.isDead())
+			return;
 		if(this instanceof Player){
 			if(this.getDamage() > 99){
 				this.changeCanAttack();

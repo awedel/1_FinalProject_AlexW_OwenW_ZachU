@@ -1,7 +1,7 @@
 
 public class SnakeDwarf extends Enemy{
-	public SnakeDwarf(){
-		super(30,10,false, "Snake Dwarf");
+	public SnakeDwarf(int strong){
+		super(30 + strong,10,false, "Snake Dwarf");
 	}
 
 }
