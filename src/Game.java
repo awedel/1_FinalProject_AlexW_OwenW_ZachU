@@ -13,7 +13,7 @@ public class Game {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Game Start");
 		
-		System.out.println("Enter 1 for HealthPotion or Enter 2 for Bomb");
+		System.out.println("Enter 1 for Health Potion or Enter 2 for Bomb");
 		int firstItem = sc.nextInt();
 		if(firstItem == 1)
 			new HealthPotion().addToInventory(player);

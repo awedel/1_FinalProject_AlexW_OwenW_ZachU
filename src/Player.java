@@ -72,10 +72,12 @@ public class Player extends Fighter {
 			weapon = new Zweihander();
 		}
 		else if(random < 25){
-			weapon = new Mace();
+			if(this.getDamage() < new Mace().getWeaponDamage())
+				weapon = new Mace();
 		}
 		else if(random < 75){
-			weapon = new Axe();
+			if(this.getDamage() < new Axe().getWeaponDamage())
+				weapon = new Axe();
 		}
 	}
 	public Enemy getNewEnemy(){
