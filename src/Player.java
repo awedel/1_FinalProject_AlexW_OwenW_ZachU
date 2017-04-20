@@ -68,12 +68,15 @@ public class Player extends Fighter {
 	}
 	public void getNewWeapon(){
 		int random = ((int)(Math.random() * 100));
-		if(random < 10)
+		if(random < 10){
 			weapon = new Zweihander();
-		else if(random < 25)
+		}
+		else if(random < 25){
 			weapon = new Mace();
-		else if(random < 50)
+		}
+		else if(random < 75){
 			weapon = new Axe();
+		}
 	}
 	public Enemy getNewEnemy(){
 		if(this.getKilled() > 3)
