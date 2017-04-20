@@ -4,11 +4,13 @@ public class Player extends Fighter {
 	private int killed;
 	private ArrayList <Item> inventory;
 	private Weapon weapon;
+	private boolean firstwave;
 	
 	public Player(){
-		super(100,20);
+		super(150,20);
 		weapon = new ShortSword();
 		killed = 0;
+		firstwave = true;
 		inventory = new ArrayList <Item>();
 	}
 	
@@ -58,6 +60,9 @@ public class Player extends Fighter {
 	public void setWeapon(Weapon w){
 		weapon = w;
 	}
+	public Weapon getWeapon(){
+		return weapon;
+	}
 	public int getDamage(){
 		return weapon.getWeaponDamage();
 	}
@@ -67,5 +72,30 @@ public class Player extends Fighter {
 			weapon = new Mace();
 		else if(random < 50)
 			weapon = new Axe();
+	}
+	public Enemy getNewEnemy(){
+		if(this.getKilled() > 3)
+			firstwave = false;
+		else if(firstwave){
+			if(this.getKilled() % 3 == 0)
+				return new DragonOfTheDeep();
+			else if(this.getKilled() % 2 == 0)
+				return new SkeletonEffigy();
+			else{
+				return new MushroomMan();
+			}
+		}
+		else{
+			int random =((int)Math.random() * 4);
+			if(random < 1)
+				return new DragonOfTheDeep();
+			else if(random < 2)
+				return new MushroomMan();
+			else if(random < 3)
+				return new SnakeDwarf();
+			else
+				return new SkeletonEffigy();
+		}
+		return new SnakeDwarf();
 	}
 }

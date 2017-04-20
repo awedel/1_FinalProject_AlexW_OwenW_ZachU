@@ -35,6 +35,11 @@ public class Fighter {
 		return canAttack;
 	}
 	public void attack(Fighter fighter, int multiplier){
+		if(this instanceof Player){
+			if(this.getDamage() > 99){
+				this.changeCanAttack();
+			}
+		}
 		fighter.reduceHealth(this.getDamage() * multiplier);
 	}
 }

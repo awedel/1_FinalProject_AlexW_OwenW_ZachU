@@ -6,7 +6,7 @@ public class Game {
 	
 	public Game(){
 		player = new Player();
-		enemy = new DefaultEnemy();
+		enemy = new SnakeDwarf();
 	}
 	public void playGame(){
 		@SuppressWarnings("resource")
@@ -58,7 +58,7 @@ public class Game {
 				player.getItem();
 				player.getNewWeapon();
 				System.out.println("\nA new enemy appears");
-				enemy = new DefaultEnemy();
+				enemy = player.getNewEnemy();
 			}
 			
 			System.out.println("Enemy Turn");
