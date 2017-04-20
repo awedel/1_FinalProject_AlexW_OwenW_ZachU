@@ -110,6 +110,13 @@ public class DisplayTest {
 			glfwPollEvents();
 		}
 	}
+	
+	static void key_callback(long window, int key, int scncode, int action, int mods) {
+		if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+			glfwSetWindowShouldClose(window, true);
+	}
+
+	
    
    
    
