@@ -37,22 +37,22 @@ public class Player extends Fighter {
 		killed++;
 	}
 	public boolean parry(Enemy enemy){
-		if(((int) (Math.random() * 100 + 1)) < 25){
+		if(((int)(Math.random() * 100 + 1)) < 25){
 			enemy.changeCanAttack();
 			return true;
 		}
 		return false;
 	}
 	public void getItem(){
-		if(((int) Math.random() * 100 + 1) < 25){
+		if(((int)(Math.random() * 100 + 1)) < 25){
 			Item potion = new HealthPotion();
 			potion.addToInventory(this);
 		}
-		else if(((int) Math.random() * 100 + 1) < 15){
+		else if(((int)(Math.random() * 100 + 1)) < 15){
 			Item bomb = new Bomb();
 			bomb.addToInventory(this);
 		}
-		else if(((int) Math.random() * 100 + 1) < 5){
+		else if(((int)(Math.random() * 100 + 1)) < 5){
 			Item pack = new FullHealthPack();
 			pack.addToInventory(this);
 		}
@@ -67,8 +67,10 @@ public class Player extends Fighter {
 		return weapon.getWeaponDamage();
 	}
 	public void getNewWeapon(){
-		int random = ((int) Math.random() * 100);
-		if(random < 25)
+		int random = ((int)(Math.random() * 100));
+		if(random < 10)
+			weapon = new Zweihander();
+		else if(random < 25)
 			weapon = new Mace();
 		else if(random < 50)
 			weapon = new Axe();
@@ -86,7 +88,7 @@ public class Player extends Fighter {
 			}
 		}
 		else{
-			int random =((int)Math.random() * 4);
+			int random =((int)(Math.random() * 4));
 			if(random < 1)
 				return new DragonOfTheDeep();
 			else if(random < 2)

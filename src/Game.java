@@ -12,9 +12,18 @@ public class Game {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Game Start");
+		
+		System.out.println("Enter 1 for HealthPotion or Enter 2 for Bomb");
+		int firstItem = sc.nextInt();
+		if(firstItem == 1)
+			new HealthPotion().addToInventory(player);
+		else
+			new Bomb().addToInventory(player);
+		sc.nextLine();
+		
 		while(player.isDead() == false){
-			System.out.println("\nYour Turn");
-			System.out.println("The Enemy has " + enemy.getHealth() + " health \nEnter 'a' to attack, 'i' to use Item, and 'p' to parry");
+			System.out.println("\n" + player + "\nYour Turn");
+			System.out.println(enemy + "\nEnter 'a' to attack, 'i' to use Item, and 'p' to parry");
 			String input = sc.nextLine();
 			
 			if(input.equals("attack") || input.equals("a")){
@@ -28,11 +37,12 @@ public class Game {
 				}
 			}
 			else if(input.equals("item") || input.equals("i")){
+				if(!(player.getCanAttack()))
+					player.changeCanAttack();
 				System.out.println("Enter item slot you want to use");
 				int slot = sc.nextInt();
 				if(player.isInventoryEmpty()){
 					System.out.println("Your Inventory is empty");
-					break;
 				}
 				else{
 					if(player.getInventory(slot) instanceof HealthPotion)
@@ -53,23 +63,22 @@ public class Game {
 			}
 			
 			if(enemy.isDead() == true){
-				System.out.println("\nEnemy Killed");
+				System.out.println("\n" + enemy.getName() + " Killed");
 				player.addKilled();
 				player.getItem();
 				player.getNewWeapon();
-				System.out.println("\nA new enemy appears");
 				enemy = player.getNewEnemy();
+				System.out.println("\nA new enemy appears\n" + enemy);
 			}
 			
 			System.out.println("Enemy Turn");
 			if(enemy.getCanAttack()){
 				enemy.attack(player,1);
-				System.out.println("The Enemy Attacks for " + enemy.getDamage());
+				System.out.println("attacks for " + enemy.getDamage());
 			}
 			else{
 				enemy.changeCanAttack();
 			}
-			System.out.println("\n" + player);
 		}
 		System.out.println("\nYOU DIED");
 		System.out.println("\nYou killed " + player.getKilled() + " enemies");
