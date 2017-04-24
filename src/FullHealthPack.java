@@ -1,4 +1,3 @@
-
 public class FullHealthPack extends Item{
 
 	public FullHealthPack() {

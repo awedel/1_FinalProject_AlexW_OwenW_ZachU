@@ -1,4 +1,3 @@
-
 public class Fighter {
 	private int health;
 	private int damage;
