@@ -98,12 +98,11 @@ public class Player extends Fighter {
 		}
 		else{
 			level ++;
-			int random =((int)(Math.random() * 4));
-			if(random < 1)
+			if(((int)(Math.random() * 4)) < 1)
 				return new DragonOfTheDeep(level * 10);
-			else if(random < 2)
+			else if(((int)(Math.random() * 4)) < 2)
 				return new MushroomMan(level * 10);
-			else if(random < 3)
+			else if(((int)(Math.random() * 4)) < 3)
 				return new SnakeDwarf(level * 10);
 			else
 				return new SkeletonEffigy(level * 10);
